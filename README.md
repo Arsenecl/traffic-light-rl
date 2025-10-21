@@ -4,65 +4,55 @@ A reinforcement learning project exploring how to optimize traffic light control
 
 ## Overview
 
-This repository contains the codebase and experimentation framework developed for a student project in reinforcement learning, focusing on traffic light coordination. The objective was to train agents to dynamically adjust signal timings in order to improve traffic flow and reduce congestion.
+This repository contains the codebase and experimentation framework developed during a project at Le Wagon. The aim was to experiment with training agents capable of dynamically adjusting signal timings to improve traffic flow and reduce congestion across multiple intersections.
 
-We explored various RL algorithms (notably DQN and its variants), deployed multi-agent setups, and evaluated their performance using microscopic traffic simulations in **SUMO** (Simulation of Urban Mobility).
+We explored several variants of Deep Q-Networks (notably DQN, 2DQN and 3DQN), and tested multi-agent setups. Experiments were carried out using microscopic traffic simulations with **SUMO** (Simulation of Urban Mobility).
 
-> **Note**: This codebase was developed collaboratively as part of a student research project. Some components (especially notebooks) are exploratory drafts, preserved here for traceability and reproducibility.
+> Note: Some parts of this repository (especially in `notebooks/`) contain exploratory drafts, preserved for documentation and reproducibility.
 
 ## Repository Structure
 
-```
-Traffic/                   SUMO XML files for the road network, routes, and simulation setup
-models/                    Saved model checkpoints
-notebooks/                 Experiment drafts and exploratory tests
-rl_package/                Packaged Python code for training and simulation
-├── rl_algorithms/         DQN, Double DQN, etc.
-├── rl_logic/              Environment logic and reward computation
-├── interface/             SUMO / TraCI communication interface
-└── params.py              Hyperparameters and configuration
-setup.py                   Project setup
-requirements.txt           Dependencies
-.env.sample / .envrc       Local environment variables (for direnv)
-README.md                  This file
-```
+Traffic/                   SUMO XML files for the road network, routes, and simulation setup  
+models/                    Saved model checkpoints  
+notebooks/                 Exploratory notebooks and intermediate tests  
+rl_package/                Packaged Python code for training and simulation  
+├── rl_algorithms/         RL algorithms like DQN, Double DQN, 3DQN  
+├── rl_logic/              Environment logic and reward calculation  
+├── interface/             Communication interface with SUMO via TraCI  
+└── params.py              Centralized configuration and hyperparameters  
+setup.py                   Project setup script  
+requirements.txt           Python dependencies  
+.env.sample / .envrc       Environment variables template  
+README.md                  This file  
 
 ## Installation
 
 Clone the repository and install dependencies:
 
-```bash
 git clone https://github.com/Arsenecl/traffic-light-rl.git
 cd traffic-light-rl
-pip install -r requirements.txt
-```
+pip install -e .
 
-Make sure **SUMO** is installed and accessible in your environment.  
-You can download it here: [SUMO Download](https://sumo.dlr.de/docs/Downloads.html)
+This uses the `setup.py` file to correctly package and install the project dependencies listed in `requirements.txt`.
 
-If you use `direnv`, you can copy `.env.sample` to `.envrc` and adjust the paths.
+Make sure SUMO is installed and accessible in your environment.  
+You can download it here: https://sumo.dlr.de/docs/Downloads.html
+
+If you use `direnv`, you can copy `.env.sample` to `.envrc` and adjust the paths accordingly.
 
 ## Running Experiments
 
-To run training or evaluation scripts, use the entry point from the `rl_package`.  
-Example:
+To train or evaluate an agent:
 
-```bash
 python -m rl_package.main
-```
 
-You can modify the parameters from `rl_package/params.py`.
+You can configure the experiment by editing the `params.py` file.
 
 ## Notebooks
 
-The `notebooks/` folder contains exploratory work, rough experiments, and intermediate results. These are not clean pipelines but were kept for documentation and traceability purposes.
+The `notebooks/` folder contains various drafts and partial tests used during the prototyping phase. These are not clean pipelines but help understand the evolution of the project.
 
 ## Demo
 
 A video demonstration showcasing the traffic simulation and the decisions made by the RL agent is available here:  
-👉 [Demo Video](https://drive.google.com/your-demo-link)
-
-## Authors
-
-This project was initially developed by a team of students as part of a reinforcement learning course.  
-This version is maintained and cleaned up by [@Arsenecl](https://github.com/Arsenecl).
+Demo Video:(https://www.youtube.com/watch?v=bnvSJbV-G6g)
