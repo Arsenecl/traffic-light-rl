@@ -11,19 +11,20 @@ We explored several variants of Deep Q-Networks (notably DQN, 2DQN and 3DQN), an
 > Note: Some parts of this repository (especially in `notebooks/`) contain exploratory drafts, preserved for documentation and reproducibility.
 
 ## Repository Structure
-
-Traffic/                   SUMO XML files for the road network, routes, and simulation setup  
-models/                    Saved model checkpoints  
-notebooks/                 Exploratory notebooks and intermediate tests  
-rl_package/                Packaged Python code for training and simulation  
-├── rl_algorithms/         RL algorithms like DQN, Double DQN, 3DQN  
-├── rl_logic/              Environment logic and reward calculation  
-├── interface/             Communication interface with SUMO via TraCI  
-└── params.py              Centralized configuration and hyperparameters  
-setup.py                   Project setup script  
-requirements.txt           Python dependencies  
-.env.sample / .envrc       Environment variables template  
-README.md                  This file  
+```
+Traffic/ → SUMO XML files for the road network, routes, and simulation setup
+models/ → Saved model checkpoints
+notebooks/ → Exploratory notebooks and intermediate tests
+rl_package/ → Packaged Python code for training and simulation
+  ├── rl_algorithms/ → RL algorithms like DQN, Double DQN, 3DQN
+  ├── rl_logic/ → Environment logic and reward calculation
+  ├── interface/ → Communication interface with SUMO via TraCI
+  └── params.py → Centralized configuration and hyperparameters
+setup.py → Project setup script
+requirements.txt → Python dependencies
+.env.sample / .envrc → Environment variables template
+README.md → This file
+```
 
 ## Installation
 
@@ -55,4 +56,4 @@ The `notebooks/` folder contains various drafts and partial tests used during th
 ## Demo
 
 A video demonstration showcasing the traffic simulation and the decisions made by the RL agent is available here:  
-Demo Video:(https://www.youtube.com/watch?v=bnvSJbV-G6g)
+[Demo Video](https://www.youtube.com/watch?v=bnvSJbV-G6g)
